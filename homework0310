@@ -1,0 +1,20 @@
+void main() {
+  Map<String, dynamic> mean = {
+    'name': 'Іван',
+    'age': '15',
+    'hobby': 'Футбол, Відеоігри'
+  };
+
+  printKeys(mean);  
+  printName(mean);  
+}
+
+void printKeys(Map<String, dynamic> map) {
+  map.forEach((key, value) {
+    print(key);  
+  });
+}
+
+void printName(Map<String, dynamic> map) {
+  print(map['name']);  
+}
