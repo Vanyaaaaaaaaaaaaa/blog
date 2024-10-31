@@ -1,0 +1,40 @@
+import 'dart:io';
+
+void main(List<String> arguments) {
+  List<String> items = ["Ключ", "Хліб", "Меч"];
+  List<String> selected = [];
+
+  for (int i = 0; i < items.length; i++) {
+    print("${i + 1}: ${items[i]}");
+  }
+
+  while (true) {
+    print("Введіть номер предмета, щоб вибрати його, або 'q' для виходу:");
+
+    final value = stdin.readLineSync();
+
+    if (value == "q") {
+      print("Гру завершено.");
+      break;
+    }
+
+    
+    if (value == "1") {
+      selected.add(items[0]);
+    } else if (value == "2") {
+      selected.add(items[1]);
+    } else if (value == "3") {
+      selected.add(items[2]);
+    } else {
+      print("Невірний вибір, спробуйте ще раз.");
+      continue;
+    }
+
+    print("Ви вибрали: ${selected.join(", ")}");
+
+    if (selected.length > 2) {
+      print("Ви обрали забагато предметів! Гру завершено.");
+      break;
+    }
+  }
+}
